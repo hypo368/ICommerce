@@ -36,8 +36,22 @@ public class Customer implements Serializable {
     private int CREDIT_LIMIT;
 
 
+    public Customer(String DISCOUNT_CODE, String ZIP, String NAME, String ADDRESSLINE1, String ADDRESSLINE2, String CITY, String STATE, String PHONE, String FAX, String EMAIL, int CREDIT_LIMIT) {
+        this.DISCOUNT_CODE = DISCOUNT_CODE;
+        this.ZIP = ZIP;
+        this.NAME = NAME;
+        this.ADDRESSLINE1 = ADDRESSLINE1;
+        this.ADDRESSLINE2 = ADDRESSLINE2;
+        this.CITY = CITY;
+        this.STATE = STATE;
+        this.PHONE = PHONE;
+        this.FAX = FAX;
+        this.EMAIL = EMAIL;
+        this.CREDIT_LIMIT = CREDIT_LIMIT;
+    }
+
     public Customer() {
-        // ??????
+        // Default constructor
     }
 
     public void setId(Long id) {

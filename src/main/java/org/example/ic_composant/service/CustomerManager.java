@@ -1,5 +1,6 @@
 package org.example.ic_composant.service;
 
+import jakarta.annotation.ManagedBean;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -18,9 +19,14 @@ public class CustomerManager {
     public List<Customer> getAllCustomers() {
         // Utilisation de JPQL pour récupérer tous les clients
         String jpql = "SELECT c FROM Customer c";
-        Query query = em.createQuery(jpql, Customer.class);
+        Query query = em.createQuery(jpql);
         return query.getResultList();
     };
+
+    @Transactional
+    public void persist(Customer customer) {
+        em.persist(customer);
+    }
 
     @Transactional
     public Customer update(Customer customer) {
@@ -28,9 +34,12 @@ public class CustomerManager {
     }
 
     @Transactional
-    public void persist(Customer customer) {
-        em.persist(customer);
+    public void delete(Customer customer) {
+        em.remove(em.contains(customer) ? customer : em.merge(customer));
     }
 
+    public Customer getCustomerById(Long id) {
+        return em.find(Customer.class, id);
+    }
 }
 
