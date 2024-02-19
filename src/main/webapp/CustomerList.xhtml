@@ -14,14 +14,71 @@
 		<h:dataTable value="#{customerBean.customers}" var="customer">
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="Nom"/>
+					<h:outputText value="#{customer.customer_id}"/>
 				</f:facet>
-				<h:outputText value="#{customer.name}"/>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.name}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.email}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.discout_code}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.zip}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.city}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.state}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.addressline1}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.addressline2}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.phone}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.fax}"/>
+				</f:facet>
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="#{customer.credit_limit}"/>
+				</f:facet>
 			</h:column>
 		</h:dataTable>
 	</h:body>
 
-	<h:outputLabel value="Hello, world"/>
+	<!-- Link to the CustomerCreate.xhtml page -->
+	<h:form>
+		<h:commandButton value="Créer un utilisateur" action="CustomerCreate"/>
+	</h:form>
 
 </f:view>
 </html>

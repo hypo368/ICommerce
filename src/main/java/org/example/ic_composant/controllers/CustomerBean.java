@@ -1,31 +1,42 @@
 package org.example.ic_composant.controllers;
 
-import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import org.example.ic_composant.entities.Customer;
 import org.example.ic_composant.service.CustomerManager;
 
+import java.io.Serializable;
 import java.util.List;
 
-@RequestScoped
-public class CustomerBean {
-    private Customer customer = new Customer();
+@ViewScoped
+@Named("customerBean")
+public class CustomerBean implements Serializable {
+
     private List<Customer> customers;
 
-    @EJB
+    @Inject
     private CustomerManager customerManager;
 
-    public void saveCustomer() {
+    public CustomerBean() {
+        // Default constructor
+    }
+
+    public List<Customer> getCustomers() {
+        if (customers == null) {
+            customers = customerManager.getAllCustomers();
+        }
+        return customers;
+    }
+
+    /**
+    public void addCustomer() {
         customerManager.createCustomer(customer);
         customer = new Customer();
     }
 
-    public List<Customer> getCustomers() {
-        return customerManager.getAllCustomers();
-    }
-
     // Getters and setters
-
     public Customer getCustomer() {
         return customer;
     }
@@ -45,4 +56,5 @@ public class CustomerBean {
     public void setCustomerManager(CustomerManager customerManager) {
         this.customerManager = customerManager;
     }
+    */
 }

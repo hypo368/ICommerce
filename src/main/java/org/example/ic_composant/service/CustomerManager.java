@@ -1,10 +1,8 @@
 package org.example.ic_composant.service;
 
-import jakarta.annotation.ManagedBean;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
 import jakarta.transaction.Transactional;
 import org.example.ic_composant.entities.Customer;
 
@@ -16,14 +14,26 @@ public class CustomerManager {
     @PersistenceContext(unitName = "my-persistence-unit")
     private EntityManager em;
 
-    public void createCustomer(Customer customer) {
-        em.persist(customer);
-    }
-
     public List<Customer> getAllCustomers() {
         return em.createQuery("SELECT c FROM Customer c", Customer.class).getResultList();
     }
 
+    @Transactional
+    public Customer update(Customer customer) {
+        return em.merge(customer);
+    }
+
+    @Transactional
+    public void persist(Customer customer) {
+        em.persist(customer);
+    }
+
+    /**
+     @Transactional
+     public void createCustomer(Customer customer) {
+     em.persist(customer);
+     }
+     */
 
     /**
     public List<Customer> getAllCustomers() {
