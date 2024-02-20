@@ -30,20 +30,27 @@
                 <h:inputText id="city" value="#{customerDetailsBean.customer.CITY}" title="City"/>
                 <h:outputText value="State :"/>
                 <h:inputText id="state" value="#{customerDetailsBean.customer.STATE}" title="State"/>
-                <h:outputText value="FAx :"/>
+                <h:outputText value="Fax :"/>
                 <h:inputText id="fax" value="#{customerDetailsBean.customer.FAX}" title="Fax"/>
                 <h:outputText value="Email :"/>
                 <h:inputText id="email" value="#{customerDetailsBean.customer.EMAIL}" title="Email"/>
                 <h:outputText value="CreditLimit :"/>
                 <h:inputText id="creditLimit" value="#{customerDetailsBean.customer.CREDIT_LIMIT}" title="CreditLimit"/>
                 <h:outputText value="Discount Code :"/>
-                <h:selectOneMenu id="discountcode" value="#{customerDetailsBean.customer.DISCOUNT_CODE}" title="DicountCode"/>
+                <h:selectOneMenu id="discountcode" value="#{customerDetailsBean.customer.DISCOUNT_CODE}" title="DiscountCode" required="true" requiredMessage="The Discount field is required">
+                    <f:selectItems value="#{customerDetailsBean.discounts}" var="discount"
+                                   itemLabel="#{discount.code} (#{discount.rate}%)"
+                                   itemValue="#{discount.code}"/>
+                </h:selectOneMenu>
+                <h:commandButton id="update" value="Enregistrer" action="#{customerDetailsBean.update}"/>
             </h:panelGrid>
+
+            <!-- Link to the CustomerList.xhtml page -->
+            <h:button id="back" value="Revenir à la liste" outcome="CustomerList"/>
 
         </h:form>
     </h:body>
 
-    <!-- Link to the CustomerList.xhtml page -->
-    <h:link outcome="CustomerList" value="Details"/>
+
 </f:view>
 </html>

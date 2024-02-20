@@ -11,7 +11,7 @@ public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "CUSTOMER_ID")
-    private Long CUSTOMER_ID;
+    private Integer CUSTOMER_ID;
     @Column(name = "DISCOUNT_CODE")
     private String DISCOUNT_CODE;
     @Column(name = "ZIP")
@@ -33,7 +33,6 @@ public class Customer implements Serializable {
     @Column(name = "EMAIL")
     private String EMAIL;
     @Column(name = "CREDIT_LIMIT")
-
     private int CREDIT_LIMIT;
 
 
@@ -55,14 +54,13 @@ public class Customer implements Serializable {
         // Default constructor
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.CUSTOMER_ID = id;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return CUSTOMER_ID;
     }
-
 
     public String getDISCOUNT_CODE() {
         return DISCOUNT_CODE;
