@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
 	<h:head>
 		<title>Liste des utilisateurs</title>
@@ -14,63 +14,75 @@
 		<h:dataTable value="#{customerBean.customers}" var="customer">
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.customer_id}"/>
+					<h:outputText value="Id"/>
 				</f:facet>
+				<h:outputText value="#{customer.id}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.name}"/>
+					<h:outputText value="Name"/>
 				</f:facet>
+				<h:outputText value="#{customer.NAME}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.email}"/>
+					<h:outputText value="Email"/>
 				</f:facet>
+				<h:outputText value="#{customer.EMAIL}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.discout_code}"/>
+					<h:outputText value="Discount code"/>
 				</f:facet>
+				<h:outputText value="#{customer.DISCOUNT_CODE}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.zip}"/>
+					<h:outputText value="ZIP"/>
 				</f:facet>
+				<h:outputText value="#{customer.ZIP}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.city}"/>
+					<h:outputText value="City"/>
 				</f:facet>
+				<h:outputText value="#{customer.CITY}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.state}"/>
+					<h:outputText value="State"/>
 				</f:facet>
+				<h:outputText value="#{customer.STATE}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.addressline1}"/>
+					<h:outputText value="AddresLine1"/>
 				</f:facet>
+				<h:outputText value="#{customer.ADDRESSLINE1}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.addressline2}"/>
+					<h:outputText value="AddresLine2"/>
 				</f:facet>
+				<h:outputText value="#{customer.ADDRESSLINE2}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.phone}"/>
+					<h:outputText value="Phone"/>
 				</f:facet>
+				<h:outputText value="#{customer.PHONE}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.fax}"/>
+					<h:outputText value="Fax"/>
 				</f:facet>
+				<h:outputText value="#{customer.FAX}"/>
 			</h:column>
 			<h:column>
 				<f:facet name="header">
-					<h:outputText value="#{customer.credit_limit}"/>
+					<h:outputText value="Credit Limit"/>
 				</f:facet>
+				<h:outputText value="#{customer.CREDIT_LIMIT}"/>
 			</h:column>
 		</h:dataTable>
 	</h:body>

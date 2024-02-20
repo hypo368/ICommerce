@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "customer")
+@NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c")
 public class Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

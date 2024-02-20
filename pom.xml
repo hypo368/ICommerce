@@ -73,8 +73,12 @@
   </build>
   <repositories>
     <repository>
-      <id>jakarta.ee</id>
+      <id>eclipseLink</id>
       <url>https://repo.eclipse.org/content/repositories/jakartaee-platform-10.0.0/</url>
+    </repository>
+    <repository>
+        <id>jakartaee</id>
+        <url>https://repo.eclipse.org/content/repositories/jakartaee-platform-10.0.0/</url>
     </repository>
   </repositories>
 </project>

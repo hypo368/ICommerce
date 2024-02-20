@@ -15,7 +15,7 @@ public class CustomerManager {
     private EntityManager em;
 
     public List<Customer> getAllCustomers() {
-        return em.createQuery("SELECT c FROM Customer c", Customer.class).getResultList();
+        return em.createNamedQuery("Customer.findAll", Customer.class).getResultList();
     }
 
     @Transactional
@@ -27,40 +27,5 @@ public class CustomerManager {
     public void persist(Customer customer) {
         em.persist(customer);
     }
-
-    /**
-     @Transactional
-     public void createCustomer(Customer customer) {
-     em.persist(customer);
-     }
-     */
-
-    /**
-    public List<Customer> getAllCustomers() {
-        // Utilisation de JPQL pour récupérer tous les clients
-        String jpql = "SELECT c FROM Customer c";
-        Query query = em.createQuery(jpql);
-        return query.getResultList();
-    };
-
-    @Transactional
-    public void persist(Customer customer) {
-        em.persist(customer);
-    }
-
-    @Transactional
-    public Customer update(Customer customer) {
-        return null;
-    }
-
-    @Transactional
-    public void delete(Customer customer) {
-        em.remove(em.contains(customer) ? customer : em.merge(customer));
-    }
-
-    public Customer getCustomerById(Long id) {
-        return em.find(Customer.class, id);
-    }
-    */
 }
 

@@ -1,6 +1,5 @@
 package org.example.ic_composant.controllers;
 
-import jakarta.enterprise.context.RequestScoped;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
@@ -30,31 +29,4 @@ public class CustomerBean implements Serializable {
         return customers;
     }
 
-    /**
-    public void addCustomer() {
-        customerManager.createCustomer(customer);
-        customer = new Customer();
-    }
-
-    // Getters and setters
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public CustomerManager getCustomerManager() {
-        return customerManager;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
-    }
-
-    public void setCustomerManager(CustomerManager customerManager) {
-        this.customerManager = customerManager;
-    }
-    */
 }
